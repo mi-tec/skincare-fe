@@ -29,7 +29,7 @@ export default function UserLogin() {
         if (_response?.data?.data?.user?.isOnBoarding === 1) {
           navigate("/user-onboarding");
         } else {
-          navigate("/");
+          navigate("/user-dashboard");
         }
       }
     } catch (error) {
