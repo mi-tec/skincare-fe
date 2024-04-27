@@ -1,0 +1,28 @@
+.header {
+	max-width: 1400px;
+	margin: 0 auto;
+}
+
+.embla {
+	overflow: hidden;
+}
+
+.embla__container {
+	display: flex;
+	max-height: 200px;
+}
+
+@media (min-width: 768px) {
+	.embla__container {
+		max-height: 500px;
+	}
+}
+
+.embla__slide {
+	flex: 0 0 100%;
+	min-width: 0;
+}
+
+.embla__slide--image {
+	width: 100%;
+}
