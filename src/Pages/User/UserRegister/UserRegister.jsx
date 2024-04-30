@@ -31,7 +31,10 @@ export default function UserRegister() {
     setSuccessRegister("");
     setErrorRegister("");
     try {
-      const _response = await axios.post(`${import.meta.env.VITE_BASE_URL}api/v1/user/auth/register`, { ...values });
+      const _response = await axios.post(
+        `${import.meta.env.VITE_BASE_URL}api/v1/user/auth/register`,
+        { ...values }
+      );
 
       if (_response?.data?.status === 1) {
         setSuccessRegister(`Registration Is Success. Please Login`);
@@ -44,7 +47,10 @@ export default function UserRegister() {
   return (
     <>
       <div className="container relative h-screen flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
-        <Link to="/user-login" className={"absolute right-4 top-4 md:right-8 md:top-8"}>
+        <Link
+          to="/user-login"
+          className={"absolute right-4 top-4 md:right-8 md:top-8"}
+        >
           Login
         </Link>
         <div className="relative hidden h-full flex-col bg-muted p-10 text-white lg:flex dark:border-r">
@@ -53,7 +59,9 @@ export default function UserRegister() {
         <div className="lg:p-8">
           <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
             <div className="flex flex-col space-y-2">
-              <h1 className="text-2xl font-semibold tracking-tight text-center">Register</h1>
+              <h1 className="text-2xl font-semibold tracking-tight text-center">
+                Register
+              </h1>
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
                 <div className="flex flex-col spacing-y-5">
                   <input
@@ -61,7 +69,9 @@ export default function UserRegister() {
                     className={
                       "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                     }
-                    {...register("username", { required: "Username is required" })}
+                    {...register("username", {
+                      required: "Username is required",
+                    })}
                     placeholder="Username"
                   />
                   {errors.username && (
@@ -78,7 +88,9 @@ export default function UserRegister() {
                     {...register("email", { required: "Email is required" })}
                     placeholder="Email"
                   />
-                  {errors.email && <span className="text-rose-600 text-sm mt-1">{`${errors.email.message}`}</span>}
+                  {errors.email && (
+                    <span className="text-rose-600 text-sm mt-1">{`${errors.email.message}`}</span>
+                  )}
                 </div>
 
                 <div className="flex flex-col spacing-y-5">
@@ -87,10 +99,14 @@ export default function UserRegister() {
                     className={
                       "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                     }
-                    {...register("number", { required: "Contact Number is required" })}
+                    {...register("number", {
+                      required: "Contact Number is required",
+                    })}
                     placeholder="Contact Number"
                   />
-                  {errors.number && <span className="text-rose-600 text-sm mt-1">{`${errors.number.message}`}</span>}
+                  {errors.number && (
+                    <span className="text-rose-600 text-sm mt-1">{`${errors.number.message}`}</span>
+                  )}
                 </div>
 
                 <div className="flex flex-col spacing-y-5">
@@ -102,7 +118,9 @@ export default function UserRegister() {
                     {...register("nic", { required: "NIC is required" })}
                     placeholder="NIC"
                   />
-                  {errors.nic && <span className="text-rose-600 text-sm mt-1">{`${errors.nic.message}`}</span>}
+                  {errors.nic && (
+                    <span className="text-rose-600 text-sm mt-1">{`${errors.nic.message}`}</span>
+                  )}
                 </div>
 
                 <div className="flex flex-col spacing-y-5">
@@ -111,10 +129,14 @@ export default function UserRegister() {
                     className={
                       "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                     }
-                    {...register("country", { required: "Country is required" })}
+                    {...register("country", {
+                      required: "Country is required",
+                    })}
                     placeholder="Country"
                   />
-                  {errors.country && <span className="text-rose-600 text-sm mt-1">{`${errors.country.message}`}</span>}
+                  {errors.country && (
+                    <span className="text-rose-600 text-sm mt-1">{`${errors.country.message}`}</span>
+                  )}
                 </div>
 
                 <div className="flex flex-col spacing-y-5">
@@ -123,7 +145,9 @@ export default function UserRegister() {
                     className={
                       "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                     }
-                    {...register("password", { required: "Password is required" })}
+                    {...register("password", {
+                      required: "Password is required",
+                    })}
                     placeholder="password"
                   />
                   {errors.password && (
@@ -158,10 +182,14 @@ export default function UserRegister() {
                 />
               </form>
               {errorRegister !== "" && (
-                <div className={`text-white rounded-md bg-red-600 px-4 py-2`}>{errorRegister}</div>
+                <div className={`text-white rounded-md bg-red-600 px-4 py-2`}>
+                  {errorRegister}
+                </div>
               )}
               {successRegister !== "" && (
-                <div className={`text-white rounded-md bg-green-600 px-4 py-2`}>{successRegister}</div>
+                <div className={`text-white rounded-md bg-green-600 px-4 py-2`}>
+                  {successRegister}
+                </div>
               )}
             </div>
           </div>
