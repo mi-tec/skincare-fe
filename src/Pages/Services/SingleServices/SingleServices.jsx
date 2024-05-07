@@ -2,6 +2,27 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { mainServices } from "../../../lib/content.js";
 
+import { Calendar, momentLocalizer } from "react-big-calendar";
+import moment from "moment";
+import "react-big-calendar/lib/css/react-big-calendar.css";
+
+const localizer = momentLocalizer(moment);
+
+const events = [
+  {
+    id: 1,
+    title: "Meeting",
+    start: new Date(2024, 3, 30, 10, 0),
+    end: new Date(2024, 3, 30, 11, 0),
+  },
+  {
+    id: 2,
+    title: "Lunch",
+    start: new Date(2024, 3, 30, 12, 0),
+    end: new Date(2024, 3, 30, 13, 0),
+  },
+];
+
 function SingleServices() {
   let { singleService } = useParams();
   const [service, setService] = useState();
@@ -29,6 +50,16 @@ function SingleServices() {
       </div>
       <div className="p-6 pt-0">
         <p>{service.desc}</p>
+
+        <Calendar
+          localizer={localizer}
+          events={events}
+          startAccessor="start"
+          endAccessor="end"
+          style={{ margin: "auto" }}
+          defaultView="week"
+          drilldownView="week"
+        />
       </div>
     </div>
   );
