@@ -1,33 +1,37 @@
 .header {
-	max-width: 1400px;
-	margin: 0 auto;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .general-block {
-	max-width: 1400px;
-	margin: 0 auto;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .embla {
-	overflow: hidden;
+    overflow: hidden;
 }
 
 .embla__container {
-	display: flex;
-	max-height: 200px;
+    display: flex;
+    max-height: 200px;
 }
 
 @media (min-width: 768px) {
-	.embla__container {
-		max-height: 500px;
-	}
+    .embla__container {
+        max-height: 500px;
+    }
 }
 
 .embla__slide {
-	flex: 0 0 100%;
-	min-width: 0;
+    flex: 0 0 100%;
+    min-width: 0;
 }
 
 .embla__slide--image {
-	width: 100%;
+    width: 100%;
+}
+
+.react-datepicker-popper {
+    z-index: 9999 !important;
 }

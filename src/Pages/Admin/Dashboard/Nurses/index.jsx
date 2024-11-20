@@ -3,20 +3,16 @@ import { columns } from "./columns";
 import { DataTable } from "./data-table";
 import axios from "axios";
 
-const Appointments = () => {
+const NursesList = () => {
   const _userStorage = sessionStorage.getItem("user");
 
   const [appointmentData, setAppointmentData] = useState([]);
 
   useEffect(() => {
     (async function () {
-      const userData = JSON.parse(_userStorage);
       const response = await axios({
         method: "get",
-        url: `${import.meta.env.VITE_BASE_URL}api/v1/appointment/single`,
-        params: {
-          service: userData?.service,
-        },
+        url: `${import.meta.env.VITE_BASE_URL}api/v1/nurses`,
       });
 
       if (response?.data?.status === 1) {
@@ -35,4 +31,4 @@ const Appointments = () => {
   );
 };
 
-export default Appointments;
+export default NursesList;
