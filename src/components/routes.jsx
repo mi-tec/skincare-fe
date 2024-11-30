@@ -18,6 +18,7 @@ import NursesList from "@/Pages/Admin/Dashboard/Nurses";
 import CreateNurse from "@/Pages/Admin/Dashboard/Nurses/CreateNurse";
 import DoctorsList from "@/Pages/Admin/Dashboard/Doctors";
 import CreateDoctor from "@/Pages/Admin/Dashboard/Doctors/CreateDoctor";
+import Chat from "@/Pages/Admin/Dashboard/Chat";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -44,6 +45,7 @@ const router = createBrowserRouter(
         <Route path="doctors" element={<DoctorsList />} />
         <Route path="create-doctor" element={<CreateDoctor />} />
       </Route>
+      <Route path="chat" element={<Chat />} />
     </>,
   ),
 );

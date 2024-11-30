@@ -21,8 +21,6 @@ const DoctorsList = () => {
     })();
   }, [_userStorage]);
 
-  console.log(appointmentData);
-
   return (
     <>
       <h2 className="text-3xl font-bold tracking-tight">Appointments</h2>

@@ -36,7 +36,7 @@ const CreateDoctor = () => {
   return (
     <>
       <h2 className="text-3xl font-bold tracking-tight">
-        Create Nurse Account
+        Create Doctor Account
       </h2>
       <form onSubmit={handleSubmit(onSubmit)} className="gap-4 grid ">
         <div className="gap-4 grid grid-cols-3">

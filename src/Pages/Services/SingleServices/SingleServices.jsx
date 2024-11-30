@@ -15,6 +15,7 @@ import axios from "axios";
 
 import setHours from "date-fns/setHours";
 import setMinutes from "date-fns/setMinutes";
+import { Button } from "@/components/ui/button.jsx";
 
 const localizer = momentLocalizer(moment);
 
@@ -224,6 +225,8 @@ function SingleServices() {
                 {successLogin}
               </div>
             )}
+
+            <a href="">Chat</a>
           </div>
         </div>
 

@@ -11,11 +11,21 @@ const Appointments = () => {
   useEffect(() => {
     (async function () {
       const userData = JSON.parse(_userStorage);
+      console.log(userData);
+
+      let userId;
+      let service;
+      if (userData?.type === "user") {
+        userId = userData?.id;
+      } else {
+        service = userData?.service;
+      }
       const response = await axios({
         method: "get",
         url: `${import.meta.env.VITE_BASE_URL}api/v1/appointment/single`,
         params: {
-          service: userData?.service,
+          userId: userId,
+          service: service,
         },
       });
 

@@ -33,7 +33,7 @@ export default function UserRegister() {
     try {
       const _response = await axios.post(
         `${import.meta.env.VITE_BASE_URL}api/v1/user/auth/register`,
-        { ...values }
+        { ...values },
       );
 
       if (_response?.data?.status === 1) {
@@ -76,6 +76,22 @@ export default function UserRegister() {
                   />
                   {errors.username && (
                     <span className="text-rose-600 text-sm mt-1">{`${errors.username.message}`}</span>
+                  )}
+                </div>
+
+                <div className="flex flex-col spacing-y-5">
+                  <input
+                    type={"text"}
+                    className={
+                      "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                    }
+                    {...register("fullName", {
+                      required: "Full Name is required",
+                    })}
+                    placeholder="Full Name"
+                  />
+                  {errors.fullName && (
+                    <span className="text-rose-600 text-sm mt-1">{`${errors.fullName.message}`}</span>
                   )}
                 </div>
 
